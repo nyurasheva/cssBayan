@@ -17,6 +17,11 @@
   --black: #000;
 }
 
+input[type=radio] {
+  visibility: hidden;
+  opacity: 0;
+}
+
 html {
   width: 100%;
   max-width: 100%;
@@ -79,12 +84,8 @@ body {
   background-position: right 1.6rem top 50%, 0 0;
 }
 
-.bayan__item:first-child .bayan__label {
-  color: var(--white);
-}
-
-.bayan:hover .bayan__item:first-child .bayan__label,
-.bayan__item:hover .bayan__label {
+.bayan__item:hover .bayan__label,
+.bayan:hover input[type=radio]:checked ~ .bayan__label {
   background-image: url(assets/accordion_btn1.svg);
 }
 
@@ -92,8 +93,12 @@ body {
   display: none;
 }
 
-.bayan__item:first-child .bayan__img,
-.bayan__item:hover .bayan__img {
+.bayan__item:hover .bayan__img,
+input[type=radio]:checked ~ .bayan__img {
   display: flex;
   justify-content: center;
+}
+
+input[type=radio]:checked ~ .bayan__label {
+  color: var(--white);
 }
