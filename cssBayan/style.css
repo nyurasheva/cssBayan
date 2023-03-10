@@ -1,0 +1,94 @@
+*, :after, :before{
+  box-sizing: border-box;
+} 
+
+@font-face{
+  font-family: Inika;
+  font-display:swap;
+  src:url(assets/fonts/Inika-Regular.ttf);
+  font-weight:400;
+  font-style:normal;
+}
+
+:root {
+  --orange: #E06733;
+  --green: #499A18;
+  --white: #fff;
+  --black: #000;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+} 
+
+/* @media(max-width:879px){
+  html {
+    font-size: 1rem;
+  }  
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.bayan {
+  max-width: 50%;
+  margin-inline: auto;
+}
+
+.bayan:hover * {
+  cursor: pointer;
+}
+
+.bayan__header {
+  font-size: 2em;
+  margin: 0.5rem 0;
+}
+
+.bayan__item {
+  display: block;
+  padding: 0.3rem;
+  border-top: 0.2rem solid var(--orange);
+}
+
+.bayan__label {
+  padding: 0.6rem 1.6rem;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 0.8rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-weight: 800;
+  /* transition: all 1s ease; */
+}
+
+.bayan:hover .bayan__label {
+  color: var(--black);
+  background-image: url(assets/accordion_btn.svg);
+  background-repeat: no-repeat, repeat;
+  background-position: right 1.6rem top 50%, 0 0;
+}
+
+.bayan:hover .bayan__item:first-child .bayan__label {
+  color: var(--white);
+  background-image: url(assets/accordion_btn1.svg);
+}
+
+.bayan__img {
+  display: none;
+}
+
+.bayan__item:first-child .bayan__img {
+  display: flex;
+  justify-content: center;
+}
