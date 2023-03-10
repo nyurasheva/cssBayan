@@ -63,7 +63,7 @@ body {
 .bayan__label {
   padding: 0.6rem 1.6rem;
   background: var(--green);
-  color: var(--white);
+  color: var(--black);
   border-radius: 0.8rem;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -73,14 +73,18 @@ body {
 }
 
 .bayan:hover .bayan__label {
-  color: var(--black);
+  color: var(--white);
   background-image: url(assets/accordion_btn.svg);
   background-repeat: no-repeat, repeat;
   background-position: right 1.6rem top 50%, 0 0;
 }
 
-.bayan:hover .bayan__item:first-child .bayan__label {
+.bayan__item:first-child .bayan__label {
   color: var(--white);
+}
+
+.bayan:hover .bayan__item:first-child .bayan__label,
+.bayan__item:hover .bayan__label {
   background-image: url(assets/accordion_btn1.svg);
 }
 
@@ -88,7 +92,8 @@ body {
   display: none;
 }
 
-.bayan__item:first-child .bayan__img {
+.bayan__item:first-child .bayan__img,
+.bayan__item:hover .bayan__img {
   display: flex;
   justify-content: center;
 }
