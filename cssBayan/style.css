@@ -85,16 +85,19 @@ body {
   transition: all 0.5s ease;
 }
 
+input[type=radio]:checked ~ .bayan__label {
+  color: var(--green);
+}
+
+input[type=radio]:checked ~ .bayan__label .bayan__icon {
+  background-image: url(./assets/chevron-up.svg);
+  transform: rotate(180deg);
+}
+
 input[type=radio]:checked ~ .bayan__img {
   height: 12.5rem;
   opacity: 1;
   overflow: hidden;
-}
-
-input[type=radio]:checked ~ .bayan__label .bayan__icon {
-  color: var(--green);
-  background-image: url(./assets/chevron-up.svg);
-  transform: rotate(180deg);
 }
 
 .bayan__item:active .bayan__img {
@@ -112,7 +115,8 @@ input[type=radio]:checked ~ .bayan__label .bayan__icon {
 
 @media (hover: hover) {
 
-  .bayan__label { 
+  .bayan__icon,  
+  input[type=radio]:checked ~ .bayan__label .bayan__icon { 
     background-image: none;
   }
 
@@ -120,7 +124,7 @@ input[type=radio]:checked ~ .bayan__label .bayan__icon {
     color: var(--green);
   }
 
-  .bayan__item:active .bayan__icon {  
+  .bayan:hover .bayan__icon {  
     background-image: url(./assets/chevron-down.svg);
   }
   
