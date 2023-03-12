@@ -2,14 +2,6 @@
   box-sizing: border-box;
 } 
 
-@font-face{
-  font-family: Inika;
-  font-display:swap;
-  src:url(assets/fonts/Inika-Regular.ttf);
-  font-weight:400;
-  font-style:normal;
-}
-
 :root {
   --orange: #E06733;
   --green: #499A18;
@@ -64,7 +56,7 @@ body {
   background: var(--bg-section);
   background-image: url(./assets/chevron-down.svg);
   background-repeat: no-repeat, repeat;
-  background-position: right 1.6rem top 50%, 0 0;
+  background-position: 95% 50%;
   color: var(--black);
   border-radius: 0.8rem;
   -moz-appearance: none;
@@ -92,6 +84,16 @@ input[type=radio]:checked ~ .bayan__label {
   background-image: url(./assets/chevron-up.svg);
 }
 
+.bayan__item:active .bayan__img {
+  opacity: 0.5 !important;
+  filter: grayscale(1);
+}
+
+.bayan__item:active > .bayan__label {
+  color: var(--black) !important;
+  background-image: url(./assets/chevron-up1.svg) !important;
+}
+
 @media (hover: hover) {
 
   .bayan__label { 
@@ -115,16 +117,6 @@ input[type=radio]:checked ~ .bayan__label {
   }
 }
 
-.bayan__item:active .bayan__img {
-  opacity: 0.5 !important;
-  filter: grayscale(1);
-}
-
-.bayan__item:active > .bayan__label {
-  color: var(--black) !important;
-  background-image: url(./assets/chevron-up1.svg) !important;
-}
-
 @media(max-width: 1200px){
 
   .bayan__label {
@@ -144,7 +136,6 @@ input[type=radio]:checked ~ .bayan__label {
 
   .bayan__label {
     padding: 0.6rem 3rem 0.6rem 1.5rem;
-    background-position: right 1.2rem top 50%, 0 0;
   }
 
 }
@@ -159,7 +150,6 @@ input[type=radio]:checked ~ .bayan__label {
   }
   .bayan__label {
     padding: 0.6rem 3rem 0.6rem 1rem;
-    background-position: right 1rem top 50%, 0 0;
   }
 
 }
