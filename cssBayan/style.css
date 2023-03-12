@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+} 
+
+:root {
+  --orange: #E06733;
+  --green: #499A18;
+  --bg-section: #EDF2EC;
+  --white: #fff;
+  --black: #000;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+} 
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.bayan {
+  max-width: 50%;
+  margin-inline: auto;
+}
+
+.bayan:hover * {
+  cursor: pointer;
+}
+
+.bayan__header {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.bayan__item {
+  display: block;
+  padding: 0.3rem;
+  border-top: 0.2rem solid var(--orange);
+}
+
+.bayan__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: var(--bg-section);
+  color: var(--black);
+  border-radius: 0.8rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-weight: 800;
+}
+
+.bayan__icon {
+  display: block;
+  background-image: url(./assets/chevron-down.svg);
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transition: all 0.5s ease;
+}
+
+.bayan__img {
+  display: flex;
+  justify-content: center;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+input[type=radio]:checked ~ .bayan__label {
+  color: var(--green);
+}
+
+input[type=radio]:checked ~ .bayan__label .bayan__icon {
+  background-image: url(./assets/chevron-up.svg);
+  transform: rotate(180deg);
+}
+
+input[type=radio]:checked ~ .bayan__img {
+  height: 12.5rem;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.bayan__item:active .bayan__img {
+  opacity: 0.5 !important;
+  filter: grayscale(1);
+}
+
+.bayan__item:active .bayan__label {
+  color: var(--black) !important;
+}
+
+.bayan__item:active .bayan__icon {
+  background-image: url(./assets/chevron-up1.svg) !important;
+}
+
+@media (hover: hover) {
+
+  .bayan__icon,  
+  input[type=radio]:checked ~ .bayan__label .bayan__icon { 
+    background-image: none;
+  }
+
+  .bayan:hover .bayan__label {
+    color: var(--green);
+  }
+
+  .bayan:hover .bayan__icon {  
+    background-image: url(./assets/chevron-down.svg);
+  }
+  
+  .bayan__item:hover .bayan__icon,
+  .bayan:hover input[type=radio]:checked ~ .bayan__label .bayan__icon {
+    background-image: url(./assets/chevron-up.svg);
+    transform: rotate(180deg);
+  }
+
+  .bayan__item:hover .bayan__img {
+    height: 12.5rem;
+    opacity: 1;
+    overflow: hidden;
+  }
+}
+
+@media(max-width: 820px){
+  html {
+    font-size: 1rem;
+  }  
+
+  .bayan {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 0.9rem;
+  } 
+
+  .bayan {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 380px) {
+  html {
+    font-size: 0.8rem;
+  } 
+
+  .bayan {
+    max-width: 90%;
+  }
+}
